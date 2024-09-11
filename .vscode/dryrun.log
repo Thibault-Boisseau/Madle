@@ -1,0 +1,6 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/hp/project2-E22'
+make: Leaving directory '/home/hp/project2-E22'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+

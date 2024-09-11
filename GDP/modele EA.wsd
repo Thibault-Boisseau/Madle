@@ -1,0 +1,53 @@
+@startuml modele E/A
+
+object Utilisateur
+Utilisateur : {static} id_joueur -> Integer
+Utilisateur : pseudo -> String
+Utilisateur : MDP -> String
+Utilisateur : darkmode -> Boolean (0 ou 1)
+
+
+object Partie
+Partie : {static} id_partie -> Integer
+Partie : id_joueur -> Integer
+Partie : id_parametre -> Integer
+Partie : victoire -> Boolean (0 ou 1)
+Partie : coup1 -> String
+Partie : coup... -> String
+Partie : coupN -> String
+
+
+object Statistiques
+Statistiques : {static} id_joueur -> Integer
+Statistiques : nb_parties -> Integer
+Statistiques : nb_victoires -> Integer
+
+
+object Parametres
+Parametres : {static} id_parametre -> Integer
+Parametres : nb_coups -> Integer (1 à 20)
+Parametres : nb_lettres... -> Integer
+
+
+object Succes
+Succes : {static} id_joueur -> Integer
+Succes : succes1 -> Boolean (0 ou 1)
+Succes : succes... -> Boolean (0 ou 1)
+Succes : succesN -> Boolean (0 ou 1)
+
+note as N1 
+Le nombre N de coups est fixé égal à 20 dans la BD (avec la possibilité de laisser des champs vides)
+Le nombre N de succès est défini selon les succès qu'on décide de mettre en place
+Les succès sont en option selon l'avancement (exemple : Faire une partie en 3 coups)
+end note
+
+
+
+Utilisateur -- Partie : 1,n
+Utilisateur -- Statistiques : n,m
+Partie -- Parametres : n,1
+Utilisateur -- Succes : n,m
+
+
+
+@enduml

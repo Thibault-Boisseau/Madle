@@ -1,0 +1,5 @@
+/env
+src/__pycache__/
+src/flask_session/
+test/
+.o

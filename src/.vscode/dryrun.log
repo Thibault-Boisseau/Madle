@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/hp/project2-E22/src'
+clang -Wall -Wextra -pedantic -O0 -fsanitize=address -fno-omit-frame-pointer -fno-optimize-sibling-calls -c list_string.c
+make: Leaving directory '/home/hp/project2-E22/src'
+ 
